@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomee>
+
+ <Resource id="<%= @jndi_id %>" type="javax.sql.DataSource">
+    accessToUnderlyingConnectionAllowed = false
+    connectionProperties =
+    defaultAutoCommit = true
+    defaultReadOnly =
+    definition =
+    ignoreDefaultValues = false
+    initialSize = 0
+    jdbcDriver = <%= @jdbc_driver %>
+    jdbcUrl = <%= @jdbc_url %>
+    jtaManaged = true
+    maxActive = 20
+    maxIdle = 20
+    maxOpenPreparedStatements = 0
+    maxWaitTime = -1 millisecond
+    minEvictableIdleTime = 30 minutes
+    minIdle = 0
+    numTestsPerEvictionRun = 3
+    password = <%= @password %>
+    passwordCipher = PlainText
+    poolPreparedStatements = false
+    serviceId =
+    testOnBorrow = true
+    testOnReturn = false
+    testWhileIdle = false
+    timeBetweenEvictionRuns = -1 millisecond
+    userName = <%= @username %>
+    validationQuery = select version();
+	factory  = org.apache.tomcat.jdbc.pool.DataSourceFactory
+</Resource>
+
+<!-- see http://tomee.apache.org/containers-and-resources.html -->
+
+  <!-- activate next line to be able to deploy applications in apps -->
+  <!-- <Deployments dir="apps" /> -->
+</tomee>
